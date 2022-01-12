@@ -9,9 +9,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Mave
 # Clone this repository
 $ git clone https://github.com/picher/kafka-boot.git
 
-# window and execute the following command:
-$ mvn clean package dockerfile:build
-
 # Now we are going to use docker-compose to start the actual image.  To start the docker image, stay in the directory containing  your chapter 5 source code and  Run the following command: 
 $ docker-compose up
+
+Run Prject
+
+http://localhost:8080/kafka/publish?message=hello
 ```
