@@ -1,0 +1,30 @@
+version: '2.1'
+services:
+  zookeeper:
+    image: zookeeper:latest
+    ports:
+      - 2181:2181
+    networks:
+      backend:
+        aliases:
+          - "zookeeper"
+  kafkaserver:
+      image: bitnami/kafka:latest
+      ports:
+        - 9092:9092
+      environment: # For bitnami image of Kafka
+        - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+        - ALLOW_PLAINTEXT_LISTENER=yes
+        - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092
+        - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      volumes:
+        - "/var/run/docker.sock:/var/run/docker.sock"
+      depends_on:
+        - zookeeper
+      networks:
+        backend:
+          aliases:
+            - "kafka"
+networks:
+  backend:
+    driver: bridge
