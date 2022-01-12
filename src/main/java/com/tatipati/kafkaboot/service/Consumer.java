@@ -7,15 +7,15 @@ package com.tatipati.kafkaboot.service;
  * @since 1/12/2022
  */
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+
+import java.util.logging.Logger;
 
 @Service
 public class Consumer {
 
-    private final Logger logger = LoggerFactory.getLogger(com.tatipati.kafkaboot.service.Consumer.class);
+    private final Logger logger =Logger.getLogger("Consumer");
 
     @KafkaListener(topics = "sample_topic", groupId = "group_id")
     public void consume(String message) {

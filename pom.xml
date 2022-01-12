@@ -11,8 +11,10 @@
 	<groupId>com.tatipati</groupId>
 	<artifactId>kafka-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<name>Kafka-Boot</name>
 	<description>Demo project for using Kafka with Spring Boot and Docker compose</description>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -28,17 +30,6 @@
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
